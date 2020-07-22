@@ -2,7 +2,7 @@ import React from 'react'
 import '../custom.scss'
 import { Link } from 'react-router-dom'
 //import logo from '../images/Logo.png'
-export function Beef() {
+export function PorkAsian() {
   return (
     <>
       <main>
@@ -38,18 +38,7 @@ export function Beef() {
             </div>
           </header>
           <h1> -</h1>
-          <p>Beef</p>
-          <div class="ProteinLinks">
-            <Link className="btn btn-success mr-2" to={'/BeefItalian'}>
-              Italian
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/BeefAsian'}>
-              Asian
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/BeefMexican'}>
-              Mexican
-            </Link>
-          </div>
+          <p>Pork Asian</p>
         </body>
       </main>
     </>

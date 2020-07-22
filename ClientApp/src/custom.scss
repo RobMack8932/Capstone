@@ -2,6 +2,10 @@
 a {
   color: #0366d6;
 }
+h1 {
+  background: linear-gradient(to left, lightgreen, green, lightgreen);
+  color: lightgreen;
+}
 .logo img {
   width: 700px;
   display: block;
@@ -19,6 +23,11 @@ p {
   font-size: 25px;
   color: rgb(176, 247, 176);
 }
+
+p::selection {
+  background-color: green;
+  color: white;
+}
 .ProteinLinks {
   text-align: center;
 }
@@ -26,4 +35,75 @@ p {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+.container {
+  background: linear-gradient(to left, lightgreen, green);
+  width: 80%;
+  margin: 0 auto;
+}
+header {
+  background: lightgreen;
+  height: 100%;
+}
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+h5 a {
+  float: left;
+  padding: 10px;
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+h5 a:hover {
+  color: black;
+  text-decoration: none;
+}
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: #444;
+  position: absolute;
+  top: 0.5;
+  width: 0%;
+  transition: all ease-in-out 200ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+h4 a:hover::before {
+  color: #444;
 }
