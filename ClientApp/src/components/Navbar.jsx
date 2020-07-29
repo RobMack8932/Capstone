@@ -4,7 +4,7 @@
       <Link to={'/'}>Home</Link>
     </h5>
 
-    <nav>
+    {/* <nav>
       <ul>
         <li>
           <Link to={'/Beef'}>Beef</Link>
@@ -22,6 +22,6 @@
           <Link to={'/Vegan'}>Vegan</Link>
         </li>
       </ul>
-    </nav>
+    </nav> */}
   </div>
 </header>

@@ -2,74 +2,21 @@ import React, { useState } from 'react'
 import '../custom.scss'
 import { Route, Switch, Link } from 'react-router-dom'
 import logo from '../images/Logo.png'
-import { Beef } from './Beef'
-import { BeefAsian } from './BeefAsian'
-import { BeefMexican } from './BeefMexican'
-import { BeefItalian } from './BeefItalian'
-import { Chicken } from './Chicken'
-import { ChickenItalian } from './ChickenItalian'
-import { ChickenAsian } from './ChickenAsian'
-import { ChickenMexican } from './ChickenMexican'
-import { Fish } from './Fish'
-import { FishItalian } from './FishItalian'
-import { FishAsian } from './FishAsian'
-import { FishMexican } from './FishMexican'
-import { Pork } from './Pork'
-import { PorkItalian } from './PorkItalian'
-import { PorkMexican } from './PorkMexican'
-import { PorkAsian } from './PorkAsian'
-import { Vegetarian } from './Vegetarian'
-import { VegetarianItalian } from './VegetarianItalian'
-import { VegetarianMexican } from './VegetarianMexican'
-import { VegetarianAsian } from './VegetarianAsian'
-import { Vegan } from './Vegan'
-import { VeganItalian } from './VeganItalian'
-import { VeganMexican } from './VeganMexican'
-import { VeganAsian } from './VeganAsian'
-export function Homepage() {
-  const [activeFilter, setActiveFilter] = useState('')
+import { AddRecipe } from './AddRecipe'
+import { Nationalities } from './Nationalities'
+import { Recipes } from './Recipes'
+
+export function Homepage(props) {
+  console.log(props.setProtein)
   return (
     <>
       <main>
-        <header>
-          <div class="container">
-            <h5>
-              <Link to={'/'}>Home</Link>
-            </h5>
+        <br />
 
-            <nav>
-              <ul>
-                <li>
-                  <Link to={'/Beef'}>Beef</Link>
-                </li>
-                <li>
-                  <Link to={'/Chicken'}>Chicken</Link>
-                </li>
-                <li>
-                  <Link to={'/Pork'}>Pork</Link>
-                </li>
-                <li>
-                  <Link to={'/Fish'}>Fish</Link>
-                </li>
-
-                <li>
-                  <Link to={'/Vegetarian'}>Vegetarian</Link>
-                </li>
-                <li>
-                  <Link to={'/Vegan'}>Vegan</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-        <h1> -</h1>
-        <div class="logo">
-          <img src={logo} />
-        </div>
-
+        <h3>Welcome to my application!</h3>
         <p>
-          Welcome to my application! Made to make the search for what to cook
-          for dinner to be as <em>seamless</em> and <em>easy</em> as possible.
+          Made to make the search for what to cook for dinner to be as{' '}
+          <em>seamless</em> and <em>easy</em> as possible.
           <br />
           Here you'll select the main protein for the dish, followed by the
           nationality for the style of cooking for the dish, <br />
@@ -77,29 +24,92 @@ export function Homepage() {
           application and have a <strong>great meal</strong> tonight!
         </p>
         <p> Please select from the following options:</p>
-        <div class="ProteinLinks">
+        <div className="ProteinLinks">
           <ul>
-            <Link className="btn btn-success mr-2" to={'/Beef'}>
-              Beef
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/Chicken'}>
-              Chicken
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/Pork'}>
-              Pork
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/Fish'}>
-              Fish
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/Vegetarian'}>
-              Vegetarian
-            </Link>
-            <Link className="btn btn-success mr-2" to={'/Vegan'}>
-              Vegan
-            </Link>
+            <form>
+              <label htmlFor="protein"></label>
+              <button
+                className="color"
+                id="protein"
+                value="Chicken"
+                onClick={event => {
+                  event.preventDefault()
+                  props.setPageImLookingAt('nationality')
+                  props.setProtein(event.target.value)
+                }}
+              >
+                Chicken
+              </button>
+
+              <button
+                className="color"
+                id="protein"
+                value="Beef"
+                onClick={event => {
+                  event.preventDefault()
+                  props.setPageImLookingAt('nationality')
+                  props.setProtein(event.target.value)
+                }}
+              >
+                Beef
+              </button>
+
+              <button
+                className="color"
+                id="protein"
+                value="Pork"
+                onClick={event => {
+                  props.setPageImLookingAt('nationality')
+                  event.preventDefault()
+                  props.setProtein(event.target.value)
+                }}
+              >
+                Pork
+              </button>
+
+              <button
+                className="color"
+                id="protein"
+                value="Fish"
+                onClick={event => {
+                  event.preventDefault()
+                  props.setPageImLookingAt('nationality')
+                  props.setProtein(event.target.value)
+                }}
+              >
+                Fish
+              </button>
+
+              <button
+                className="color"
+                id="protein"
+                value="Vegetarian"
+                onClick={event => {
+                  event.preventDefault()
+                  props.setPageImLookingAt('nationality')
+                  props.setProtein(event.target.value)
+                }}
+              >
+                Vegetarian
+              </button>
+
+              <button
+                className="color"
+                id="protein"
+                value="Vegan"
+                onClick={event => {
+                  event.preventDefault()
+                  props.setPageImLookingAt('nationality')
+                  props.setProtein(event.target.value)
+                }}
+              >
+                Vegan
+              </button>
+            </form>
             <br />
           </ul>
         </div>
+        <footer>Made with love by Rob Mack EST 2020</footer>
       </main>
     </>
   )
